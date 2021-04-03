@@ -21,7 +21,7 @@ export default class ArrayBufferConverter {
   }
 
   toString() {
-    this.result = String.fromCharCode(...[...this.arg] = new Uint16Array(this.buffer));
+    this.result = String.fromCharCode.apply(this, new Uint16Array(this.buffer));
     return this.result;
   }
 }
